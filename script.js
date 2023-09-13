@@ -15,6 +15,8 @@ const images = [
     'img/05.webp',
 ]
 
+let counterImg = 0;
+
 //resetto lo slider
 itemsWrapper.innerHTML = '';
 circlesWrapper.innerHTML = '';

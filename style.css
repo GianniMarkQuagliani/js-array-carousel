@@ -74,3 +74,43 @@
     height: 100%;
     object-fit: cover;
 }
+
+/*
+   Stile per le immagini all'interno del carosello.
+   Le immagini verranno ridimensionate per coprire tutto il contenitore.
+*/
+.btn-arrow{
+    position: absolute;
+    background-color: rgba(0,0,0, .6);
+    color: white;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* 
+   Cambiano colore in rgba(0, 0, 0, 0.8) quando vengono passati con il mouse.
+*/
+
+.btn-arrow.left:hover,
+.btn-arrow.right:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/*
+   Posizionati a sinistra del carosello.
+*/
+.btn-arrow.left{
+    left: 15px;
+}
+
+/*
+   Posizionati a destra del carosello.
+*/
+.btn-arrow.right{
+    right: 15px;
+}

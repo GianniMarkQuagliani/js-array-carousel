@@ -52,16 +52,17 @@ btnNext.addEventListener('click', function(){
     circlesCollection[counterImg].classList.remove('active');
     //incrementa il contatore
     counterImg++;
+    //BONUS 1
+    // Verifica se si è raggiunta l'ultima immagine
+    if (counterImg === itemsCollection.length) {
+        // Se sì, torna alla prima immagine
+        counterImg = 0;
+    }
     //tolgo la classe hide all'elemento corrente e aggiungo active dal pallino corrente
     itemsCollection[counterImg].classList.remove('hide');
     circlesCollection[counterImg].classList.add('active');
     //al click di next appare prev
     btnPrev.classList.remove('hide');
-    //quando sono sull'ultimo elemento nascondo il bottone next
-    if (counterImg === itemsCollection.length - 1) {
-        btnNext.classList.add('hide');
-    }
-
 });
 
 //al click di prev come punto 4 va inverso
@@ -69,10 +70,15 @@ btnPrev.addEventListener('click', function(){
     itemsCollection[counterImg].classList.add('hide');
     circlesCollection[counterImg].classList.remove('active');
     counterImg--;
+    //BONUS 1
+    // Verifica se si è raggiunta la prima immagine
+    if (counterImg < 0) {
+        // Se sì, torna all'ultima immagine
+        counterImg = itemsCollection.length - 1;
+    }
     itemsCollection[counterImg].classList.remove('hide');
     circlesCollection[counterImg].classList.add('active');
     //al click di prev mostrio next togliendo la classe hide
     btnNext.classList.remove('hide');
-    //quando sono sull'rpimo elemento nascondo il prev
-    if (counterImg === 0) btnPrev.classList.add('hide');
+    
 });

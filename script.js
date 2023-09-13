@@ -33,3 +33,19 @@ const itemsCollection = document.getElementsByClassName('item');
 
 //al primo elemento tolgo la classe hide
 itemsCollection[counterImg].classList.remove('hide');
+
+//prendo tutta la collection dei pallini
+const circlesCollection = document.getElementsByClassName('circle');
+
+//al click di next
+btnNext.addEventListener('click', function(){
+    //a.
+    itemsCollection[counterImg].classList.add('hide');
+    circlesCollection[counterImg].classList.remove('active');
+    //b.
+    counterImg++;
+    //c.
+    itemsCollection[counterImg].classList.remove('hide');
+    circlesCollection[counterImg].classList.add('active');
+
+});

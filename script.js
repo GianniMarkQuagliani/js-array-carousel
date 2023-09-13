@@ -36,11 +36,14 @@ for (let i = 0; i < images.length; i++) {
 //prendo tutti gli elementi ocn la classe item e li salvo in un array
 const itemsCollection = document.getElementsByClassName('item');
 
+//prendo tutta la collection dei pallini
+const circlesCollection = document.getElementsByClassName('circle');
+
 //al primo elemento tolgo la classe hide
 itemsCollection[counterImg].classList.remove('hide');
 
-//prendo tutta la collection dei pallini
-const circlesCollection = document.getElementsByClassName('circle');
+//rendo attivo il primo pallino
+circlesCollection[counterImg].classList.add('active');
 
 //al click di next
 btnNext.addEventListener('click', function(){

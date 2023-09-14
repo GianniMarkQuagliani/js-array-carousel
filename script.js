@@ -53,7 +53,7 @@ btnNext.addEventListener('click', function(){
     //incrementa il contatore
     counterImg++;
     //BONUS 1
-    // Verifica se si è raggiunta l'ultima immagine
+    // Verifico se si è raggiunta l'ultima immagine
     if (counterImg === itemsCollection.length) {
         // Se sì, torna alla prima immagine
         counterImg = 0;
@@ -71,7 +71,7 @@ btnPrev.addEventListener('click', function(){
     circlesCollection[counterImg].classList.remove('active');
     counterImg--;
     //BONUS 1
-    // Verifica se si è raggiunta la prima immagine
+    // Verifico se si è raggiunta la prima immagine
     if (counterImg < 0) {
         // Se sì, torna all'ultima immagine
         counterImg = itemsCollection.length - 1;
@@ -82,3 +82,31 @@ btnPrev.addEventListener('click', function(){
     btnNext.classList.remove('hide');
     
 });
+
+//Autoslide
+// Variabile per l'intervallo di autoslide
+let interval; 
+
+// Tempo in millisecondi tra le slide automatiche
+const autoSlideInterval = 3000; 
+
+// Funzione per avviare l'autoslide
+function startAutoSlide() {
+  interval = setInterval(function () {
+
+    // Simula il click sul pulsante "Next" per cambiare immagine
+    btnNext.click(); 
+  }, autoSlideInterval);
+}
+
+// Funzione per interrompere l'autoslide
+function stopAutoSlide() {
+  clearInterval(interval);
+}
+
+// Aggiungo un gestore di eventi per avviare l'autoslide al caricamento della pagina
+document.addEventListener("DOMContentLoaded", startAutoSlide);
+
+// Aggiungo gestori di eventi per interrompere l'autoslide quando il mouse è sopra il carosello
+itemsWrapper.addEventListener("mouseover", stopAutoSlide);
+itemsWrapper.addEventListener("mouseout", startAutoSlide);
